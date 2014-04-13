@@ -1,6 +1,6 @@
 if [ "x$__GIT_PROMPT_DIR" == "x" ]
 then
-  __GIT_PROMPT_DIR=~/.bash
+  __GIT_PROMPT_DIR=~/bash-config/bash
 fi
 
 # Bold colors
