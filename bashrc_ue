@@ -22,7 +22,8 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 shopt -s histappend # Append to the history file, don't overwrite it
 
-source ~/.git-prompt.sh # Git branch only
-# source ~/.bash/git-prompt.sh # Git branch + status
-source ~/.git-completion.bash # Git commands and branches auto complete
+source ~/bash-config/git-prompt.sh # Git branch only
+# source ~/bash-config/bash/git-prompt.sh # Git branch + status
+
+source ~/bash-config/git-completion.bash # Git commands and branches auto complete
 
