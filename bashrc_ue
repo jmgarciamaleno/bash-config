@@ -27,3 +27,6 @@ source ~/bash-config/git-prompt.sh # Git branch only
 
 source ~/bash-config/git-completion.bash # Git commands and branches auto complete
 
+# phpspec uedit
+export PATH="$PATH:~/workspace/standard/vendors/develop/bin"
+
