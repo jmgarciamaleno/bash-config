@@ -9,7 +9,8 @@ txtrst='\e[0m'    # Text Reset
 # export PS1="\[$bldgrn\]\u@\h \[$bldblu\]\w\n\[$bldylw\]$\[$txtrst\] " # Color
 export PS1="\[$bldgrn\]\u@\h \[$bldblu\]\w\[$bldpur\]\$(__git_ps1)\n\[$bldylw\]$\[$txtrst\] " # Color + git
 
-alias ls='ls --color=auto'
+# alias ls='ls -G' # OSX
+alias ls='ls --color=auto' # Ubuntu
 alias ll='ls -l'
 alias grep='grep --color'
 
