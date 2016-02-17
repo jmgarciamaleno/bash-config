@@ -12,6 +12,7 @@ export PS1="\[$bldgrn\]\u@\h \[$bldblu\]\w\[$bldpur\]\$(__git_ps1)\n\[$bldylw\]$
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias grep='grep --color'
+alias fuck='sudo $(history -p \!\!)'
 # UEdit
 alias ssh-elm='ssh -A josemanuel.garcia@elmundo.dev.internet.int'
 alias ssh-met='ssh -A josemanuel.garcia@metropoli.dev.internet.int'
@@ -30,4 +31,6 @@ source ~/bash-config/git-completion.bash # Git commands and branches auto comple
 
 # phpspec uedit
 export PATH="$PATH:~/workspace/standard/vendors/develop/bin"
-
+# golang uedit
+export GOPATH=/home/jose/projects/golang
+export PATH=$PATH:$GOPATH/bin
