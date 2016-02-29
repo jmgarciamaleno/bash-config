@@ -26,11 +26,8 @@ shopt -s histappend # Append to the history file, don't overwrite it
 
 source ~/bash-config/git-prompt.sh # Git branch only
 # source ~/bash-config/bash/git-prompt.sh # Git branch + status
-
 source ~/bash-config/git-completion.bash # Git commands and branches auto complete
 
-# phpspec uedit
-export PATH="$PATH:~/workspace/standard/vendors/develop/bin"
 # golang uedit
 export GOPATH=/home/jose/projects/golang
 export PATH=$PATH:$GOPATH/bin
