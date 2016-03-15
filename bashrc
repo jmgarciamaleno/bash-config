@@ -13,6 +13,7 @@ export PS1="\[$bldgrn\]\u@\h \[$bldblu\]\w\[$bldpur\]\$(__git_ps1)\n\[$bldylw\]$
 alias ls='ls --color=auto' # Ubuntu
 alias ll='ls -l'
 alias grep='grep --color'
+alias fuck='sudo $(history -p \!\!)'
 
 HISTCONTROL=ignoreboth # Don't put duplicate lines or lines starting with space in the history
 HISTSIZE=1000
