@@ -17,7 +17,8 @@ alias fuck='sudo $(history -p \!\!)'
 alias ssh-elm='ssh -A josemanuel.garcia@elmundo.dev.internet.int'
 alias ssh-met='ssh -A josemanuel.garcia@metropoli.dev.internet.int'
 alias ssh-cms='ssh -A josemanuel.garcia@cms.dev.internet.int'
-alias ssh-marca='ssh -A josemanuel.garcia@marca.dev.internet.int'
+alias ssh-mar='ssh -A josemanuel.garcia@marca.dev.internet.int'
+alias ssh-exp='ssh -A josemanuel.garcia@expansion.dev.internet.int'
 
 HISTCONTROL=ignoreboth # Don't put duplicate lines or lines starting with space in the history
 HISTSIZE=1000
