@@ -18,6 +18,7 @@ alias fuck='sudo $(history -p \!\!)'
 HISTCONTROL=ignoreboth # Don't put duplicate lines or lines starting with space in the history
 HISTSIZE=1000
 HISTFILESIZE=2000
+HISTTIMEFORMAT="%d/%m/%y %T "
 shopt -s histappend # Append to the history file, don't overwrite it
 
 # source ~/bash-config/git-prompt.sh # Git branch only
