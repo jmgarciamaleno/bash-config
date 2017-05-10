@@ -4,15 +4,22 @@ bldylw='\e[1;33m' # Yellow
 bldblu='\e[1;34m' # Blue
 bldpur='\e[1;35m' # Purple
 txtrst='\e[0m'    # Text Reset
+
 # export PS1='\u@\h \w\n$ ' # No color
 # export PS1="\u@\h \w\$(__git_ps1)\n$ " # No color + git
 # export PS1="\[$bldgrn\]\u@\h \[$bldblu\]\w\n\[$bldylw\]$\[$txtrst\] " # Color
 export PS1="\[$bldgrn\]\u@\h \[$bldblu\]\w\[$bldpur\]\$(__git_ps1)\n\[$bldylw\]$\[$txtrst\] " # Color + git
+export PATH=$PATH:/home/jose/bin
+export BLACKFIRE_SERVER_ID=a8cb955d-03a7-483f-ae52-e7516b5c101e
+export BLACKFIRE_SERVER_TOKEN=582e9ea065f4d989fb09c7d7842e82956adab31659d548cb340e2fba885e01ef
+export BLACKFIRE_USER_ID=ff16b4b9-253e-4e33-b0db-cd5a81e78880
+export BLACKFIRE_USER_TOKEN=469d432b314eae34f898102485e0edb8982ba2631fc97695547e60691b92f5ee
 
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias grep='grep --color'
 alias fuck='sudo $(history -p \!\!)'
+
 # UEdit
 alias ssh-elm='ssh -A josemanuel.garcia@elmundo.dev.internet.int'
 alias ssh-met='ssh -A josemanuel.garcia@metropoli.dev.internet.int'
@@ -26,10 +33,12 @@ HISTFILESIZE=2000
 HISTTIMEFORMAT="%d/%m/%y %T "
 shopt -s histappend # Append to the history file, don't overwrite it
 
+# Enable bash completion
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
 source ~/bash-config/git-prompt.sh # Git branch only
 # source ~/bash-config/bash/git-prompt.sh # Git branch + status
 source ~/bash-config/git-completion.bash # Git commands and branches auto complete
-
-# golang uedit
-export GOPATH=/home/jose/projects/golang
-export PATH=$PATH:$GOPATH/bin
+source ~/bash-config/docker-completion.bash # Docker commands auto complete

@@ -4,6 +4,7 @@ bldylw='\e[1;33m' # Yellow
 bldblu='\e[1;34m' # Blue
 bldpur='\e[1;35m' # Purple
 txtrst='\e[0m'    # Text Reset
+
 # export PS1='\u@\h \w\n$ ' # No color
 # export PS1="\u@\h \w\$(__git_ps1)\n$ " # No color + git
 # export PS1="\[$bldgrn\]\u@\h \[$bldblu\]\w\n\[$bldylw\]$\[$txtrst\] " # Color
@@ -21,8 +22,12 @@ HISTFILESIZE=2000
 HISTTIMEFORMAT="%d/%m/%y %T "
 shopt -s histappend # Append to the history file, don't overwrite it
 
+# Enable bash completion
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
 # source ~/bash-config/git-prompt.sh # Git branch only
 source ~/bash-config/bash/git-prompt.sh # Git branch + status
-
 source ~/bash-config/git-completion.bash # Git commands and branches auto complete
-
+source ~/bash-config/docker-completion.bash # Docker commands auto complete
