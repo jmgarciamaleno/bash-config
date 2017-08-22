@@ -1,13 +1,15 @@
 # Colors
-gray='\e[37m'
-green='\e[92m'
-cyan='\e[96m'
+blue='\e[38;5;117m'
+green='\e[38;5;10m'
+yellow='\e[38;5;229m'
+red='\e[38;5;196m'
 reset='\e[0m'
 
+export TERM='xterm-256color'
 # export PS1='\u@\h \w $ ' # No color
 # export PS1="\u@\h \w\$(__git_ps1) $ " # No color + git
-# export PS1="\[$gray\]\u@\h \[$green\]\w \[$cyan\]$\[$reset\] " # Color
-export PS1="\[$gray\]\u@\h \[$green\]\w\[$reset\]\$(__git_ps1) \[$cyan\]$\[$reset\] " # Color + git
+# export PS1="\[$blue\]\u@\h \[$green\]\w \[$red\]$\[$reset\] " # Color
+export PS1="\[$blue\]\u@\h \[$green\]\w\[$yellow\]\$(__git_ps1) \[$red\]$\[$reset\] " # Color + git
 
 # alias ls='ls -G' # OSX
 alias ls='ls --color=auto' # Ubuntu
@@ -26,8 +28,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-source ~/bash-config/git-prompt.sh # Git branch only
-# source ~/bash-config/bash/git-prompt.sh # Git branch + status
-
+source ~/bash-config/git-prompt.sh # Git branch
 source ~/bash-config/git-completion.bash # Git commands and branches auto complete
 source ~/bash-config/docker-completion.bash # Docker commands auto complete
