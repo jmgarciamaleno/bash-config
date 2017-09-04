@@ -5,7 +5,7 @@ yellow='\e[38;5;229m'
 red='\e[38;5;196m'
 reset='\e[0m'
 
-export TERM='xterm-256color'
+# export TERM='xterm-256color'
 # export PS1='\u@\h \w $ ' # No color
 # export PS1="\u@\h \w\$(__git_ps1) $ " # No color + git
 # export PS1="\[$blue\]\u@\h \[$green\]\w \[$red\]$\[$reset\] " # Color
