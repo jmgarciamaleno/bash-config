@@ -1,7 +1,7 @@
 # Colors
 blue='\e[38;5;117m'
 green='\e[38;5;10m'
-orange='\e[38;5;208m'
+orange='\e[38;5;214m'
 red='\e[38;5;196m'
 yellow='\e[38;5;229m'
 reset='\e[0m'
