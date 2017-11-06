@@ -7,6 +7,7 @@ yellow='\e[38;5;229m'
 reset='\e[0m'
 
 # export TERM='xterm-256color'
+eval `dircolors ~/bash-config/dircolors` # ls colors
 # export PS1='\u@\h \w $ ' # No color
 # export PS1="\u@\h \w\$(__git_ps1) $ " # No color + git
 # export PS1="\[$blue\]\u \[$yellow\]\h \[$green\]\w \[$red\]$\[$reset\] " # Color
