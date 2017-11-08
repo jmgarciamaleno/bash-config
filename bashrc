@@ -5,16 +5,21 @@ orange='\e[38;5;214m'
 red='\e[38;5;196m'
 yellow='\e[38;5;229m'
 reset='\e[0m'
+export LS_COLORS="no=00:fi=00:di=38;5;117:ln=38;5;214:ex=38;5;10:";
 
-# export TERM='xterm-256color'
-eval `dircolors ~/bash-config/dircolors` # ls colors
+# Prompt
 # export PS1='\u@\h \w $ ' # No color
 # export PS1="\u@\h \w\$(__git_ps1) $ " # No color + git
 # export PS1="\[$blue\]\u \[$yellow\]\h \[$green\]\w \[$red\]$\[$reset\] " # Color
 export PS1="\[$blue\]\u \[$yellow\]\h \[$green\]\w\[$orange\]\$(__git_ps1) \[$red\]$\[$reset\] " # Color + git
 
-# alias ls='ls -G' # OSX
-alias ls='ls --color=auto' # Ubuntu
+# Alias
+OS=`uname -s`
+if [[ "$OS" == 'Linux' ]]; then
+    alias ls='ls --color=auto'
+elif [[ "$OS" == 'Darwin' ]]; then # OSX
+    alias ls='ls -G'
+fi
 alias ll='ls -l'
 alias grep='grep --color'
 alias fuck='sudo $(history -p \!\!)'
@@ -26,10 +31,11 @@ HISTTIMEFORMAT="%d/%m/%y %T "
 shopt -s histappend # Append to the history file, don't overwrite it
 
 # Enable bash completion
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+if [[ -f /etc/bash_completion ]] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Imports
 source ~/bash-config/git-prompt.sh # Git branch
 source ~/bash-config/git-completion.bash # Git commands and branches auto complete
 source ~/bash-config/docker-completion.bash # Docker commands auto complete
