@@ -1,3 +1,5 @@
+OS=`uname -s`
+
 # Colors
 blue='\e[38;5;117m'
 green='\e[38;5;10m'
@@ -5,7 +7,9 @@ orange='\e[38;5;214m'
 red='\e[38;5;196m'
 yellow='\e[38;5;229m'
 reset='\e[0m'
-export LS_COLORS="no=00:fi=00:di=38;5;117:ln=38;5;214:ex=38;5;10:";
+if [[ "$OS" == 'Linux' ]]; then
+    export LS_COLORS='no=00:fi=00:di=38;5;117:ln=38;5;214:ex=38;5;10:';
+fi
 
 # Prompt
 # export PS1='\u@\h \w $ ' # No color
@@ -14,7 +18,6 @@ export LS_COLORS="no=00:fi=00:di=38;5;117:ln=38;5;214:ex=38;5;10:";
 export PS1="\[$blue\]\u \[$yellow\]\h \[$green\]\w\[$orange\]\$(__git_ps1) \[$red\]$\[$reset\] " # Color + git
 
 # Alias
-OS=`uname -s`
 if [[ "$OS" == 'Linux' ]]; then
     alias ls='ls --color=auto'
 elif [[ "$OS" == 'Darwin' ]]; then # OSX
