@@ -23,7 +23,7 @@ if [[ "$OS" == 'Linux' ]]; then
 elif [[ "$OS" == 'Darwin' ]]; then # OSX
     alias ls='ls -G'
 fi
-alias ll='ls -l'
+alias ll='ls -hl'
 alias grep='grep --color'
 alias fuck='sudo $(history -p \!\!)'
 

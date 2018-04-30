@@ -14,9 +14,11 @@ Colors look better over a dark grey background, like `#202020`.
 - Git branch in prompt + git commands completion
 - Docker commands completion
 - Some aliases
-  + ll
-  + colorized grep
-  + `fuck` redo last command with sudo
+  ```
+  alias ll='ls -hl'
+  alias grep='grep --color'
+  alias fuck='sudo $(history -p \!\!)' # Redo last command using sudo
+  ```
 
 ## Installation
 
