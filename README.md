@@ -1,6 +1,22 @@
 # bash-config
 
-My personal bash config for linux anc mac.
+My personal minimalistic bash config for linux anc mac.
+
+Colors look better over a dark grey background, like `#202020`.
+
+![alt bash-config](bash-config.png)
+
+## Features
+
+- Clear colors
+- History with timestamps
+- Bash commands completion
+- Git branch in prompt + git commands completion
+- Docker commands completion
+- Some aliases
+  + ll
+  + colorized grep
+  + `fuck` redo last command with sudo
 
 ## Installation
 
