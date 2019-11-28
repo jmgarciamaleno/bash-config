@@ -34,6 +34,30 @@ HISTFILESIZE=2000
 HISTTIMEFORMAT="%d/%m/%y %T "
 shopt -s histappend # Append to the history file, don't overwrite it
 
+# Linux ssh-agent
+if [[ "$OS" == 'Linux' ]]; then
+    SSH_ENV="$HOME/.ssh/environment"
+
+    function start_agent {
+        echo "Initialising new SSH agent..."
+        /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+        echo succeeded
+        chmod 600 "${SSH_ENV}"
+        . "${SSH_ENV}" > /dev/null
+        /usr/bin/ssh-add;
+    }
+
+    if [ -f "${SSH_ENV}" ]; then
+        . "${SSH_ENV}" > /dev/null
+        #ps ${SSH_AGENT_PID} doesn't work under cywgin
+        ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+            start_agent;
+        }
+    else
+        start_agent;
+    fi
+fi
+
 # Enable bash completion
 if [[ -f /etc/bash_completion ]] && ! shopt -oq posix; then
     . /etc/bash_completion
